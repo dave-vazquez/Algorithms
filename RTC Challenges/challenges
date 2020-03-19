@@ -9,7 +9,26 @@ STAND_UP CHALLENGES
           count++;
 
   ########################
-  ANSWER:
+  ANSWER: O(N^2)
+  JUSTIFICATION:
+    The outer-loop has a RTC of O(n) as it will iterate for i < N times
+    The inner-loop has a RTC that increases on each iteration:
+      iteration 1: 
+        i = 0           i = 1           i = 2
+        j = 0, j < 0    j = 0, j < 1    j = 0, j < 2
+        # iterations 0  # iterations 1  # iterations 2
+
+    ATTEMPT at computing RTC algebraically:    
+    --------------------------------------------------------
+    O(N * ((N - N) + (N - (N-1) + (N - (N-2)... (N - (N-N)))
+    --------------------------------------------------------
+    O(N * ((  0  ) + (    1   ) + (    2   )... (    N   )))
+    --------------------------------------------------------
+    O(N * N)
+    --------------------------------------------------------
+    O(N^2)
+    ########################
+
 2) ------------------------------------------------------
 
   int count = 0;
@@ -42,7 +61,7 @@ STAND_UP CHALLENGES
   for (int i = 1; i <= Math.pow(2, n); i++){
     console.log("Hey - I'm busy looking at: " + i);
   }
-  
+
   ########################
   ANSWER:
 
