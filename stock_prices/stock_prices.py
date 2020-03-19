@@ -10,6 +10,9 @@ def find_max_profit(prices):
 
     sell = 0
     largest = prices[1]
+    # find the largest price in the list --> set the index to sell
+    # beginning at one as their has to be one buy available before
+    # sell
     for i in range(1, len(prices)):
         if prices[i] >= largest:
             largest = prices[i]
@@ -17,11 +20,12 @@ def find_max_profit(prices):
 
     buy = 0
     smallest = prices[0]
+    # find the lowest price in the list *up to sell* and set that to buy
     for j in range(0, sell):
         if prices[j] <= smallest:
             smallest = prices[j]
             buy = j
-
+    # return the difference
     return prices[sell] - prices[buy]
 
 
