@@ -5,9 +5,24 @@ import os
 
 os.system('clear')
 
+'''
+RUN-TIME COMPLEXITY: O(n)
+
+Justification: 
+    The first loop runs N-1 times. 
+    Drop the constant and you get O(n).
+    The second loop runs N-k times, where k is the sell index.
+    In a worst case scenario, k is the last index of the array
+        leaving us with N-1 again.
+    Drop the constant and you O(n).
+    Adding the two constants together you get
+        O(n + n) or O(2n)
+    Drop the constants one last time and you get O(n)
+
+'''
+
 
 def find_max_profit(prices):
-
     sell = 0
     largest = prices[1]
     # find the largest price in the list --> set the index to sell
