@@ -11,18 +11,18 @@ STAND_UP CHALLENGES
   ########################
   ANSWER: O(N^2)
   JUSTIFICATION:
-    The outer-loop has a RTC of O(n) as it will iterate for i < N times
+    The outer-loop has a RTC of O(n) as it will iterate N times
     The inner-loop has a RTC that increases on each iteration:
-      iteration 1: 
-        i = 0           i = 1           i = 2
-        j = 0, j < 0    j = 0, j < 1    j = 0, j < 2
-        # iterations 0  # iterations 1  # iterations 2
+        iteration 1:    | iteration 2:    | iteration 3:
+        i = 0           | i = 1           | i = 2
+        j = 0, j < 0    | j = 0, j < 1    | j = 0, j < 2
+        # iterations 0  | # iterations 1  | # iterations 2
 
     ATTEMPT at computing RTC algebraically:    
     --------------------------------------------------------
-    O(N * ((N - N) + (N - (N-1) + (N - (N-2)... (N - (N-N)))
+    O(N * ((N - N) + (N - (N-1)) + (N - (N-2))... (N - (N-N)))
     --------------------------------------------------------
-    O(N * ((  0  ) + (    1   ) + (    2   )... (    N   )))
+    O(N * ((  0  ) + (    1    ) + (    2    )... (    N    ))
     --------------------------------------------------------
     O(N * N)
     --------------------------------------------------------
